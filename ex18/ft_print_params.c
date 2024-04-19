@@ -1,20 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex16.c                                             :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:46:58 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/19 17:31:20 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/19 17:32:57 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/19 17:42:19 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ex16/ft_strlen.c"
-#include <stdio.h>
+#include <unistd.h>
 
-void ex16(void)
+void	ft_putchar(char c)
 {
-	char* str = "Four";
-	printf("EX16 - This is what whe are passing [%s] and here its string lenght [%d]\n", str, ft_strlen(str));
+	write(1, &c, 1);
+}
+
+void	ft_print_params(char **argv)
+{
+	int	i;
+	int	y;
+
+	i = 1;
+	while (argv[i])
+	{
+		y = 0;
+		while (argv[i][y])
+		{
+			ft_putchar(argv[i][y]);
+			y++;
+		}
+		ft_putchar('\n');
+		i++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc > 1)
+		ft_print_params(argv);
+	else
+		return (1);
 }
