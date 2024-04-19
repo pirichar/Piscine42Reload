@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:56:55 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/19 14:04:14 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/19 14:07:56 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/19 14:27:56 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief 	Iterative way of doing factorial, from the number to 1 ,
-			we managed the edge cases first
+ * @brief first manage exceptions, then starting from one
+			loop over the availables numbers 
+			if you overpass the number by multiplying rtn by itself 
+			we thencheck if we found or not a square number
  * 
- * @param nb to be factored
- * @return int factorial nb
+ * @param nb to be checked
+ * @return squared root or 0
  */
 
-int	ft_iterative_factorial(int nb)
+int	ft_sqrt(int nb)
 {
 	int	rtn;
-	int	i;
-	int	nb_copy;
 
 	if (nb < 0)
 		return (0);
-	if (nb == 0)
-		return (1);
-	i = 1;
-	nb_copy = nb;
-	rtn = nb;
-	while (i < nb_copy)
-	{
-		rtn = rtn * (nb - 1);
-		nb--;
-		i++;
-	}
-	return (rtn);
+	if (nb == 0 || nb == 1)
+		return (nb);
+	rtn = 1;
+	while (rtn * rtn < nb)
+		rtn++;
+	if (rtn * rtn == nb)
+		return (rtn);
+	return (0);
 }

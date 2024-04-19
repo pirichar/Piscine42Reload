@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:56:55 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/19 14:04:14 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/19 14:38:46 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/19 14:43:53 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief 	Iterative way of doing factorial, from the number to 1 ,
-			we managed the edge cases first
- * 
- * @param nb to be factored
- * @return int factorial nb
- */
+#include <unistd.h>
 
-int	ft_iterative_factorial(int nb)
+
+void	ft_putchar(char c)
 {
-	int	rtn;
-	int	i;
-	int	nb_copy;
+	write(1,&c,1);
+}
 
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	i = 1;
-	nb_copy = nb;
-	rtn = nb;
-	while (i < nb_copy)
+void ft_putstr(char *str)
+{
+	while(*str)
 	{
-		rtn = rtn * (nb - 1);
-		nb--;
-		i++;
+		ft_putchar(*str++);
 	}
-	return (rtn);
 }

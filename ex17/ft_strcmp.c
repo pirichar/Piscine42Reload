@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:56:55 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/19 14:04:14 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/19 14:56:59 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/19 15:12:26 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief 	Iterative way of doing factorial, from the number to 1 ,
-			we managed the edge cases first
+ * @brief Compare characters and ensure neither is the null terminator
+		Return the difference of the current characters, handling different string lengths
  * 
- * @param nb to be factored
- * @return int factorial nb
+ * @param s1 
+ * @param s2 
+ * @return int 
  */
-
-int	ft_iterative_factorial(int nb)
+int ft_strcmp(char *s1, char *s2)
 {
-	int	rtn;
-	int	i;
-	int	nb_copy;
-
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	i = 1;
-	nb_copy = nb;
-	rtn = nb;
-	while (i < nb_copy)
+	while (*s1 && *s2)
 	{
-		rtn = rtn * (nb - 1);
-		nb--;
-		i++;
+		if (*s1 != *s2)
+		{
+			return (*s1 - *s2);
+		}
+		s1++;
+		s2++;
 	}
-	return (rtn);
+	return (*s1 - *s2);
 }

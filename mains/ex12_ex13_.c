@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ex12_ex13_.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:56:55 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/19 14:04:14 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/19 14:41:16 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/19 14:50:04 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief 	Iterative way of doing factorial, from the number to 1 ,
-			we managed the edge cases first
- * 
- * @param nb to be factored
- * @return int factorial nb
- */
+#include <stdio.h>
+#include "../ex12/ft_iterative_factorial.c"
+#include "../ex13/ft_recursive_factorial.c"
 
-int	ft_iterative_factorial(int nb)
+void ex12_ex13(void)
 {
-	int	rtn;
-	int	i;
-	int	nb_copy;
+	int num = 0;
+	int rtn;
+	int rtn1;
 
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	i = 1;
-	nb_copy = nb;
-	rtn = nb;
-	while (i < nb_copy)
-	{
-		rtn = rtn * (nb - 1);
-		nb--;
-		i++;
-	}
-	return (rtn);
+	rtn = ft_iterative_factorial(num);
+	rtn1 = ft_recursive_factorial(num);
+	printf("EX12 - this is the iterative factorial of %d = [%d]\n",num, rtn);
+	printf("EX13 - this is the recursive factorial of %d = [%d]\n",num, rtn1);
 }
