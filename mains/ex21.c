@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ex21.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:56:59 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/22 09:49:10 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/22 10:04:24 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/22 10:19:51 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief while *s1 and *s2 are not the null 
-		Return the difference of the current characters,
-		handling different string lengths
- * 
- * @param s1 
- * @param s2 
- * @return int 
- */
-int	ft_strcmp(char *s1, char *s2)
+
+#include "../ex21/ft_range.c"
+#include <stdio.h>
+#include <string.h>
+
+
+void ex21(void)
 {
-	while (*s1 && *s2)
+	int min = 10;
+	int max = 16;
+
+	int* range = ft_range(min, max);
+	int n = (max - min) + 1;
+	printf("EX21 - this is the size of the array = [%d]\n",n);
+	int i = 0;
+	while(n-- > 0)
 	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		s1++;
-		s2++;
+		printf("EX21 - This is range at position %d [%d]\n", i, range[i]);
+		i++;
 	}
-	return (*s1 - *s2);
+
 }

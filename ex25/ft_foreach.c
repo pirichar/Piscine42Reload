@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:56:59 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/22 09:49:10 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/22 11:05:37 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/22 11:21:23 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief while *s1 and *s2 are not the null 
-		Return the difference of the current characters,
-		handling different string lengths
+ * @brief It should be a good idea to implement a kind of 
+			security mechanism for this function but its not asked
+			For now we loop for as many time as lenght
  * 
- * @param s1 
- * @param s2 
- * @return int 
+ * @param tab array of int to apply the function to
+ * @param length number of repetition
+ * @param f function applied to each element of the array
  */
-int	ft_strcmp(char *s1, char *s2)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	while (*s1 && *s2)
+	while (length-- > 0)
 	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		s1++;
-		s2++;
+		f(*tab++);
 	}
-	return (*s1 - *s2);
 }

@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ex20.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:56:59 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/22 09:49:10 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/22 09:29:48 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/22 09:37:11 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief while *s1 and *s2 are not the null 
-		Return the difference of the current characters,
-		handling different string lengths
- * 
- * @param s1 
- * @param s2 
- * @return int 
- */
-int	ft_strcmp(char *s1, char *s2)
+#include "../ex20/ft_strdup.c"
+#include <stdio.h>
+#include <string.h>
+
+
+void ex20(void)
 {
-	while (*s1 && *s2)
-	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
+	char* test = "Test\0";
+	char *test2;
+
+	test2 = ft_strdup(test);
+	printf("EX20 - This is test = [%s]\nEX20 - this is test2 = [%s]\n",test,test2);
+	free(test2);
 }

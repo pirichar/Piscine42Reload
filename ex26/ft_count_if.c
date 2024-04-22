@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:56:59 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/22 09:49:10 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/22 11:22:06 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/22 13:54:14 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief while *s1 and *s2 are not the null 
-		Return the difference of the current characters,
-		handling different string lengths
- * 
- * @param s1 
- * @param s2 
- * @return int 
- */
-int	ft_strcmp(char *s1, char *s2)
+int	ft_count_if(char **tab, int (*f)(char*))
 {
-	while (*s1 && *s2)
+	int	rtn;
+	int	i;
+
+	rtn = 0;
+	i = 0;
+	while (tab[i])
 	{
-		if (*s1 != *s2)
+		if (f(tab[i]) == 1)
 		{
-			return (*s1 - *s2);
+			rtn++;
 		}
-		s1++;
-		s2++;
+		i++;
 	}
-	return (*s1 - *s2);
+	return (rtn);
 }

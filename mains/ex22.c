@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ex22.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:56:59 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/22 09:49:10 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/22 10:38:33 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/22 10:41:11 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @brief while *s1 and *s2 are not the null 
-		Return the difference of the current characters,
-		handling different string lengths
- * 
- * @param s1 
- * @param s2 
- * @return int 
- */
-int	ft_strcmp(char *s1, char *s2)
+#include "../ex22/ft_abs.h"
+#include <stdio.h>
+#include <string.h>
+
+
+
+void ex22(void)
 {
-	while (*s1 && *s2)
-	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
+	int positive = 10;
+	int negative = -10;
+
+	printf("EX22 - This is my positive int printed as aboslute [%d]\n", ABS(positive));
+	printf("EX22 - This is my negative int printed as aboslute [%d]\n", ABS(negative));
 }
