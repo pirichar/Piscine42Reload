@@ -6,7 +6,7 @@
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:05:37 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/23 10:22:57 by pirichar         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:20:35 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param length number of repetition
  * @param f function applied to each element of the array
  */
- 
+
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	while (length-- > 0)
