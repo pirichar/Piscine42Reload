@@ -6,13 +6,13 @@
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:34:45 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/18 15:36:47 by pirichar         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:01:07 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putchary(char c)
 {
 	write (1, &c, 1);
 }
@@ -28,7 +28,7 @@ void	ft_print_numbers(void)
 	i = 0;
 	while (i <= nine)
 	{
-		ft_putchar(to_print++);
+		ft_putchary(to_print++);
 		i++;
 	}
 }

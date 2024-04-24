@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ex06.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:45:36 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/24 11:01:04 by pirichar         ###   ########.fr       */
+/*   Created: 2024/04/24 10:37:26 by pirichar          #+#    #+#             */
+/*   Updated: 2024/04/24 10:41:02 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int*a, int *b)
-{
-	int	tmp;
+#include <stdio.h>
+#include "../ex06/ft_print_alphabet.c"
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+
+void ex06(void)
+{
+	printf("EX06 - Will print the alphabet [");
+	fflush(stdout);  // Flush the buffer to ensure all printf content is output before write is called
+	ft_print_alphabet();
 }
