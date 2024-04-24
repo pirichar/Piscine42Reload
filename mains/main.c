@@ -6,10 +6,16 @@
 /*   By: pirichar <pirichar@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:32:06 by pirichar          #+#    #+#             */
-/*   Updated: 2024/04/23 10:22:42 by pirichar         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:58:52 by pirichar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "./ex06.c"
+#include "./ex07.c"
+#include "./ex08.c"
+#include "./ex09.c"
+#include "./ex10.c"
+#include "./ex11.c"
 #include "./ex12_ex13_.c"
 #include "./ex14.c"
 #include "./ex15.c"
@@ -26,6 +32,12 @@
 
 int main(void)
 {
+	ex06();
+	ex07();
+	ex08();
+	ex09();
+	ex10();
+	ex11();
 	ex12_ex13();
 	ex14();
 	ex15();
